@@ -4,7 +4,6 @@
 <%= render "shared/header" %>
 
 <body class="application <%= params[:controller].gsub("/", " ") %> <%= params[:action]%>">
-    <%= render "shared/home_nav" %>
   
     <%= yield %>
 </body>

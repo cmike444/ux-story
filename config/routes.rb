@@ -1,4 +1,10 @@
 Uxstories::Application.routes.draw do
+  resources :stories
+  get "pricing" => "pages#pricing"
+  get "support" => "pages#support"
+  get "features" => "pages#features"
+  get "learn" => "pages#blog"
+
   root "pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
