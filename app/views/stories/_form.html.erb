@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="form-field">
+    When <%= text_field :situation, class: "form-control", palceholder: "situation" %>,
+  </div>
+  <div class="form-field">
+    I want to <%= text_field :action, class: "form-control", palceholder: "action" %>
+  </div>
+  <div class="form-field">
+    so I can <%= text_field :expected_outcome, class: "form-control", palceholder: "expected_outcome" %>.
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
