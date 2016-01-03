@@ -1,0 +1,21 @@
+<div class="container-fluid secondary-nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-left">
+        <h1>
+          New Project&nbsp;
+          <!-- <span class="small">All<span class="caret"></span></span> -->
+        </h1>
+      </div>
+      <div class="col-sm-6 text-right">
+        <%= link_to "New Project", new_project_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<div class='container'>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', projects_path %>
+</div>

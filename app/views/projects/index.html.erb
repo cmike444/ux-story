@@ -1,0 +1,63 @@
+<div class="container-fluid secondary-nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-left">
+        <h1>
+          My Projects&nbsp;
+          <!-- <span class="small">All<span class="caret"></span></span> -->
+        </h1>
+      </div>
+      <div class="col-sm-6 text-right">
+        <%= link_to "New Project", new_project_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container projects">
+  <div class="row">
+    <br/>
+    <% @projects.each do |project| %>
+      <%= link_to project_path(project) do %>
+        <div class="col-sm-3">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= project.name ||= "Project ##{project.id}" %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-sm-6">
+                <h3><%= project.stories.size %></h3>
+                <small>Personas</small>
+              </div>
+              <div class="col-sm-6">
+                <h3><%= project.stories.size %></h3>
+                <small>Stories</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ -->

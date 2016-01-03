@@ -91,3 +91,57 @@ a {
 .home #hero .img {
   width: 440px;
 }
+
+.backend {
+  background: #f1f3f3;
+
+  .navbar {
+    margin-bottom: 0px;
+  }
+}
+
+.secondary-nav {
+    background: #fbfbfb;
+    box-shadow: 0px 0px 3px #bbb;
+
+    h1 {
+      font-size: 28px;
+      margin: 15px 0px;
+      color: #787878;
+      font-weight: 300px;
+      font-family: "Lato", "Helvetica Neue", Arial;
+
+      span {
+        color: #999;
+      }
+    }
+
+    .btn {
+      margin: 12px;
+    }
+
+}
+
+.projects {
+
+  .panel {
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0px 1px 3px #c8c8c8;
+    border: none;
+    // margin: 0px 10px;
+
+    .panel-body {
+      color: #999;
+
+      h3 {
+        margin: 0;
+        color: #666;
+      }
+    }
+
+    .panel-title {
+       color: #333;
+    }
+  }
+}
