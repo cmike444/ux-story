@@ -1,0 +1,66 @@
+<div id="signup">  
+  <div class="container">
+    <div class="row header">
+      <div class="col-md-12">
+        <h3 class="logo">
+          <%= link_to "productSTORY", root_url %>
+        </h3>
+        <h4>Set up your new account today.</h4>
+        <p>
+          30-day money-back guarantee that starts after your first payment.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="wrapper clearfix">
+          <div class="formy">
+            <div class="row">
+              <div class="col-md-12">
+              
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+
+                  <div class="form-group">
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.label :password %>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %><br />
+                    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+                  </div>
+
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> You have read &amp; agree to the 
+                          <a href="#">Terms of service</a>.
+                      </label>
+                    </div>
+
+                  <div class="submit">
+                    <%= f.submit "Create my account", class: 'button-clear' %>
+                  </div>
+                <% end %>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <div class="already-account">
+          Already have an account?
+          <%- if controller_name != 'sessions' %>
+            <%= link_to "Sign in here", new_session_path(resource_name) %>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

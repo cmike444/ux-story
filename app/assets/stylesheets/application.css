@@ -10,6 +10,7 @@
  *
  *= require theme
  *= require expanded-theme
+ *= require animate
  *= require_self
  *= require_tree .
  */

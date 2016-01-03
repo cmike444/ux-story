@@ -12,18 +12,28 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li><%= link_to "Projects", features_path %></li>
+          <li><%= link_to "Projects", stories_path %></li>
           <li><%= link_to "Personas", learn_path %></li>
-          <li><%= link_to "Research", support_path %></li>
+          <li><%= link_to "Tools", support_path %></li>
           <li><%= link_to "Team", pricing_path %></li>
           <!-- <li><a href="index.html">Login</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right visible-md visible-lg">
-          <li>
-              <a href="signup.html" class="button">
-                chrismikelson@gmail.com
-              </a>
-          </li>
+          <% if user_signed_in? %>
+            <li>
+                <%= link_to edit_user_registration_path, class: 'button dropdown-toggle', :data => {toggle: "dropdown"} do %>
+                  <%= current_user.email %> <span class="caret"></span>
+                <% end %>
+                <ul class="dropdown-menu normal-menu">
+                  <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
+                  <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                </ul>
+              </li>
+          <% else %>
+            <li>
+                <a href="signup.html" class="button">Sign up free</a>
+            </li>
+          <% end %>
         </ul>
     </nav>
   </div>

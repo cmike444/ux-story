@@ -1,4 +1,5 @@
 Uxstories::Application.routes.draw do
+  devise_for :users
   resources :stories
   get "pricing" => "pages#pricing"
   get "support" => "pages#support"

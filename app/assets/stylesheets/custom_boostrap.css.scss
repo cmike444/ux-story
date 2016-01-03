@@ -52,3 +52,42 @@ a {
     font-size: 21px !important;
     font-family: "Lato", "Helvetica Neue", Arial;
 }
+
+#signup .button-clear {
+  display: block;
+  font-size: 14px;
+  padding-left: 23px;
+  padding-right: 23px;
+  height: 36px;
+  line-height: 33px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #444;
+  text-shadow: 0 1px 0 white;
+  background: #eff1f4;
+  background: -webkit-linear-gradient(#f7f8fa, #eff1f4);
+  background: -moz-linear-gradient(#f7f8fa, #eff1f4);
+  background: -ms-linear-gradient(#f7f8fa, #eff1f4);
+  background: -o-linear-gradient(#f7f8fa, #eff1f4);
+  background: linear-gradient(#f7f8fa, #eff1f4);
+  -webkit-box-shadow: inset 0 1px 0 white;
+  -moz-box-shadow: inset 0 1px 0 white;
+  -ms-box-shadow: inset 0 1px 0 white;
+  -o-box-shadow: inset 0 1px 0 white;
+  box-shadow: inset 0 1px 0 white;
+  box-shadow: 0px 1px 2px 0px #999;
+}
+
+.application.devise.sessions.new,
+.application.devise.registrations.new,
+.application.devise.passwords.new {
+  background: #2D3244;
+}
+
+.navbar-nav.navbar-right ul.normal-menu {
+  margin-top: 33px;
+}
+
+.home #hero .img {
+  width: 440px;
+}

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+
+<%= render "shared/header" %>
+
+<body class="backend <%= params[:controller].gsub("/", " ") %> <%= params[:action]%>">
+  <%= render "shared/app_nav" %>
+  <%= render "shared/alerts" %>
+    <%= yield %>
+</body>
+</html>
