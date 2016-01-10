@@ -1,0 +1,44 @@
+#app-nav {
+  box-shadow: none !important;
+  background: #1E2432 !important;
+  padding: 0 60px;
+  z-index: 1048;
+
+  .navbar-nav > li > a {
+    color: #757B8D;
+    font-family: "Lato", "Helvetiva", sans-serif;
+
+
+    &:hover {
+      color: #51596C;
+    }
+  }
+
+  .navbar-left {
+    float: left;
+  }
+
+  .navbar-right {
+
+    li.icon a {
+      padding: 15px 0;
+    }
+
+    li.upgrade a {
+      text-transform: uppercase;
+      font-size: 85%;
+      font-weight: 900 !important;
+      color: cornflowerblue;
+    }
+  }
+
+  .dropdown-toggle {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: none;
+    }
+  }
+
+}

@@ -1,0 +1,126 @@
+<div class="container-fluid secondary-nav">
+  <div class="row">
+    <div class="col-sm-6 text-left">
+      <h1>
+        My Personas&nbsp;
+        <!-- <span class="small">All<span class="caret"></span></span> -->
+      </h1>
+    </div>
+    <div class="col-sm-6 text-right">
+      <%= link_to "Create New Persona", new_persona_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid personas">
+  <div class="row">
+    <div class="col-sm-12 sidebar">
+
+      <div class="tabs-left">
+        <div class="tb-tabs tabbable tb-tabs-framed">
+          <ul class="nav nav-tabs">
+            
+            <li>
+              <%= link_to new_persona_path, class: 'btn' do %>
+                Create New Persona
+              <% end %>
+            </li>
+
+            <li class="active">
+              <a href="#example-persona" data-toggle="tab" title="example-persona">
+                <label>David Kiefer</label>
+                <p>Account Executive</p>
+              </a>
+            </li>
+
+            <% if @personas.any? %>
+              <% @personas.each do |persona| %>
+                <li class="">
+                  <a href="#persona_<%= persona.id %>" data-toggle="tab" title="Title #1">
+                    <label><%= persona.persona_name ||= "Persona ##{persona.id}" %></label>
+                    <p><%= persona.role_title ||= "Unemployed & Homeless"%></p>
+                  </a>
+                </li>
+              <% end %>
+            <% end %>
+            
+          </ul>
+          <div class="tab-content dark">
+
+            <div id="example-persona" class="tab-pane entry-content fade in clearfix active">
+              <div class="row feature-story-controls">
+                <div class="col-md-12">
+                  <div class="btn-group pull-right" role="group">
+                  <button class="btn btn-default">See more examples</button>
+                  <button class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <%= image_tag "example_persona.png", class: "media-object img-circle", size: '60' %>
+                  </a>
+                </div>
+                <div class="media-body">
+
+                  <h4 class="media-heading">David Kiefer</h4>
+                  <b>Account Executive</b> &nbsp;&middot;&nbsp; Chicago, Illinois<br/><br/>
+
+                  <label>Age</label>: &nbsp;34
+                  <label class="margin-left">Gender</label>: &nbsp;Male
+                  <br/><br/>
+                  <blockquote>“Every person is defined by the communities they belong to.”</blockquote>
+                  <br/><br/>
+                  <p>Clinton "Clint" Eastwood Jr. (born May 31, 1930) is an American actor, film director, producer, musician, and political figure. He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns during the 1960s, and as antihero cop Harry Callahan in the five Dirty Harry films throughout the 1970s and 1980s. These roles, among others, have made him an enduring cultural icon of masculinity.</p>
+                  
+
+                </div>
+              </div>
+            </div><!-- .tab-pane (end) -->
+            
+            <% if @personas.any? %>
+              <% @personas.each do |persona| %>
+                <div id="persona_<%= persona.id %>" class="tab-pane entry-content fade in clearfix">
+                  <div class="row feature-story-controls">
+                    <div class="col-md-12">
+                      <div class="btn-group pull-right" role="group">
+                      <%= link_to "Edit Persona", edit_persona_path(persona), class: "btn btn-default" %>
+                      <%= link_to persona, method: :delete, data: { confirm: "Are you sure you want to delete this persona?"}, class: "btn btn-default" do %>
+                        <i class="fa fa-trash-o"></i>
+                      <% end %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <%= image_tag "clint.png", class: "media-object img-circle", size: '60' %>
+                      </a>
+                    </div>
+                    <div class="media-body">
+
+                      <h4 class="media-heading"><%= persona.persona_name %></h4>
+                      <b><%= persona.role_title %></b> &nbsp;&middot;&nbsp; <%= persona.location %><br/><br/>
+
+                      <label>Age</label>: &nbsp;34
+                      <label class="margin-left">Gender</label>: &nbsp;Male
+                      <br/><br/>
+                      <blockquote><%= persona.quote ||= "Every person is defined by the communities they belong to." %></blockquote>
+                      <br/><br/>
+                      <p><%= persona.role_description ||= "Clinton 'Clint' Eastwood Jr. (born May 31, 1930) is an American actor, film director, producer, musician, and political figure. He rose to international fame with his role as the Man with No Name in Sergio Leone's Dollars trilogy of spaghetti Westerns during the 1960s, and as antihero cop Harry Callahan in the five Dirty Harry films throughout the 1970s and 1980s. These roles, among others, have made him an enduring cultural icon of masculinity." %></p>
+                      
+                    </div>
+                  </div>
+                </div><!-- .tab-pane (end) -->
+              <% end %>
+            <% end %>
+            
+
+          </div><!-- .tab-content (end) -->
+        </div><!-- .tabbable (end) -->
+      </div>
+
+    </div>
+  </div>
+</div>
