@@ -1,4 +1,6 @@
 Uxstories::Application.routes.draw do
+  resources :personas
+
   resources :projects
 
   devise_for :users

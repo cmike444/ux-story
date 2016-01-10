@@ -1,0 +1,19 @@
+<div class="container-fluid secondary-nav">
+  <div class="row">
+    <div class="col-sm-6 text-left">
+      <span class="back-button animated fadeInRight">
+        <%= link_to personas_path do %>
+          <i class="fa fa-arrow-left"></i>
+        <% end %>
+      </span>
+      <h1>New Persona</h1>
+    </div>
+    <div class="col-sm-6 text-right">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid page"> 
+<%= render 'form' %>
+</div>
+<%= link_to 'Back', personas_path %>

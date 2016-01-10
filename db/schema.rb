@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103050501) do
+ActiveRecord::Schema.define(version: 20160110174336) do
+
+  create_table "personas", force: true do |t|
+    t.string   "persona_name"
+    t.string   "avatar"
+    t.string   "location"
+    t.string   "role_title"
+    t.string   "quote"
+    t.string   "uuid"
+    t.text     "role_description"
+    t.text     "demographics"
+    t.text     "payload"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+    t.integer  "user_id"
+  end
+
+  add_index "personas", ["project_id"], name: "index_personas_on_project_id"
+  add_index "personas", ["user_id"], name: "index_personas_on_user_id"
 
   create_table "projects", force: true do |t|
     t.string   "name"

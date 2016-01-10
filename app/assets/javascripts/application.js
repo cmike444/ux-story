@@ -14,4 +14,50 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require typed
 //= require_tree .
+
+
+var ready;
+ready = function() {
+
+  $(function(){
+    $("#situation").typed({
+      strings: ["I encounter a problem", "I perform a task", "situation"],
+      typeSpeed: 10,
+      startDelay: 3000,
+      backSpeed: 10,
+      backDelay: 8000,
+      loop: false,
+      showCursor: false
+    });
+  });
+
+  $(function(){
+    $("#motivation").typed({
+      strings: ["help right away", "do the job right", "motivation"],
+      typeSpeed: 10,
+      startDelay: 5000,
+      backSpeed: 10,
+      backDelay: 10000,
+      loop: false,
+      showCursor: false
+    });
+  });
+
+  $(function(){
+    $("#outcome").typed({
+      strings: ["finish what I started", "complete my tasks", "expected outcome"],
+      typeSpeed: 10,
+      startDelay: 7000,
+      backSpeed: 10,
+      backDelay: 12000,
+      loop: false,
+      showCursor: false
+    });
+  });
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
