@@ -7,7 +7,11 @@
       </h1>
     </div>
     <div class="col-sm-6 text-right">
-      <%= link_to "Create New Persona", new_persona_path, class: 'btn btn-primary' %>
+      <%= link_to new_persona_path do %>
+        <div class="add_new_fab">
+          <%= material_icon.add.md_24 %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
