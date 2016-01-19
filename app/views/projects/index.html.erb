@@ -1,14 +1,14 @@
 <div class="container-fluid secondary-nav">
   <div class="row">
     <div class="col-sm-6 text-left">
-      <h1>
+      <h1 class="animated fadeInUp">
         My Projects&nbsp;
         <!-- <span class="small">All<span class="caret"></span></span> -->
       </h1>
     </div>
     <div class="col-sm-6 text-right">
       <%= link_to new_project_path do %>
-        <div class="add_new_fab">
+        <div class="add_new_fab animated zoomIn">
           <%= material_icon.add.md_24 %>
         </div>
       <% end %>
@@ -27,8 +27,8 @@
             </div>
             <div class="panel-body">
               <div class="col-sm-6">
-                <h3><%= project.personas.size %></h3>
-                <small>Personas</small>
+                <h3><%= project.features.size %></h3>
+                <small>Features</small>
               </div>
               <div class="col-sm-6">
                 <h3><%= project.stories.size %></h3>

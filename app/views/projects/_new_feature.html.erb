@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="new_feature" tabindex="-1" role="dialog" aria-labelledby="new_feature">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_for @project.features.build do |f| %>
+      
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+        </div>
+        
+        <div class="modal-body">
+          <label class="label-text">New Feature</label>
+          <h3>
+          <%= f.text_field :name, class: "form-story", placeholder: "New Feature ##{@project.features.size+1}" %></h3><br/>
+          <%= f.hidden_field :project_id, value: @project.id %>
+        </div>
+        
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <div class="actions">
+                <%= f.submit "Save Feature", class: "btn btn-primary pull-right" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

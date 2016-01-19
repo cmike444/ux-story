@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110174336) do
+ActiveRecord::Schema.define(version: 20160111055302) do
+
+  create_table "features", force: true do |t|
+    t.string   "name"
+    t.string   "problem_statement"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "features", ["project_id"], name: "index_features_on_project_id"
 
   create_table "personas", force: true do |t|
     t.string   "persona_name"
@@ -51,10 +61,10 @@ ActiveRecord::Schema.define(version: 20160110174336) do
     t.text     "payload"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "project_id"
+    t.integer  "feature_id"
   end
 
-  add_index "stories", ["project_id"], name: "index_stories_on_project_id"
+  add_index "stories", ["feature_id"], name: "index_stories_on_feature_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

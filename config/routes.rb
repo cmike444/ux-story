@@ -1,4 +1,6 @@
 Uxstories::Application.routes.draw do
+  resources :features
+
   resources :personas
 
   resources :projects
