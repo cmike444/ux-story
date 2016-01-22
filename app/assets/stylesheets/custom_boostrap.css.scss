@@ -206,6 +206,7 @@ p {
 
     .panel {
       box-shadow: none;
+
     }
   }
 }
@@ -324,9 +325,9 @@ p {
   font-family: "Lato", "Helvetica Neue", Arial;
 
   &.btn-default {
-    color: #898f9a;
+    color: #3A506B;
     background: none;
-    border-color: #ececec;
+    border-color: #3A506B;
   }
 
   &.btn-primary {
@@ -419,4 +420,35 @@ button.btn {
 .checkbox input[type="checkbox"], 
 .checkbox-inline input[type="checkbox"] {
   top: 2px;
+}
+
+.projects {
+
+  .list-group {
+
+    .list-group-item {
+      padding: 0;
+      border: none;
+      background: none;
+
+      a {
+        padding: 10px 15px;
+        background: #fff;
+        border-radius: 2px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .panel-title {
+    margin: 15px;
+  }
+
+  a {
+    color: #23527c;
+
+    &:hover {
+
+    }
+  }
 }

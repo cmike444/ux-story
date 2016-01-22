@@ -6,7 +6,7 @@
             <%= material_icon.arrow_back.md_36 %>
           <% end %>
         </span>
-        <h1 class="animated fadeInUp">
+        <h1 class="animated fadeIn">
           <%= @project.name %>&nbsp;
         </h1>
       </div>
@@ -26,11 +26,11 @@
       <div class="row">
         <div class="col-sm-12 text-right">
           <div class="btn-group">
-            <button class="btn btn-sm">
-              Most Recent &nbsp;<span class="caret"></span>
+            <button class="btn btn-default">
+              Share Project
             </button>
-            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#new_feature">
-              <i class="fa fa-plus"></i> &nbsp;New Feature
+            <button class="btn btn-primary" data-toggle="modal" data-target="#new_feature">
+              <i class="fa fa-plus"></i> &nbsp;New Section
             </button>
           </div>
           <br/><br/><br/>
@@ -74,8 +74,7 @@
                   </p>
                   <div class="collapse" id="story_<%= story.id %>">
                     <div class="row">
-                      <div class="col-sm-12">
-                        <br/>
+                      <div class="col-sm-12 page">
                         <div id="add_persona_to_story">
                           <i class="fa fa-plus"></i>
                         </div>
