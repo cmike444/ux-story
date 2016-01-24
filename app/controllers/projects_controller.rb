@@ -3,7 +3,27 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
   layout "backend"
 
-  respond_to :html
+  respond_to :html, :js, :json
+
+  def add_persona
+    @story = Story.find(params[:story_id])
+    @persona = Persona.find(params[:persona_id])
+    @story.personas << @persona
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+   def remove_persona
+    @story = Story.find(params[:story_id])
+    @persona = Persona.find(params[:persona_id])
+    @story.personas.destroy(@persona)
+
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def index
     @projects = current_user.projects.all

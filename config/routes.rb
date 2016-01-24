@@ -7,6 +7,9 @@ Uxstories::Application.routes.draw do
 
   devise_for :users
   resources :stories
+
+  post "add_persona" => "projects#add_persona"
+  patch "remove_persona" => "projects#remove_persona"
   get "pricing" => "pages#pricing"
   get "support" => "pages#support"
   get "features" => "pages#features"

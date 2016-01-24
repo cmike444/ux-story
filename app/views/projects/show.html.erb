@@ -75,15 +75,28 @@
                   <div class="collapse" id="story_<%= story.id %>">
                     <div class="row">
                       <div class="col-sm-12 page">
-                        <div id="add_persona_to_story">
-                          <i class="fa fa-plus"></i>
+                        <div id="add_persona_to_story_wrapper">
+                          <div id="add_persona_to_story" data-toggle="modal" data-target="#add_personas_to_<%= story.id %>">
+                            <i class="fa fa-plus"></i>
+                          </div>
+                          <% if story.personas.any? %>
+                            <% story.personas.each do |persona| %>
+                            <%= link_to remove_persona_path(story_id: story.id, persona_id: persona.id), method: :patch, remote: true do %>
+                              <%= image_tag "clint.png", class: 'img-circle animated fadeInLeft', size: '44' %>
+                            <% end %>
+                          <% end %>
+                          <% else %>
+                            <label class="label-text">Select Personas</label>
+                          <% end %>
                         </div>
-                        <label class="label-text">Select Personas</label>
+                        <%= render partial: "add_persona_to_story", locals: { story: story } %>
                         <br/><br/>
                       </div>
                     </div>
                   </div>
                 </li>
+
+          
 
               <% end %>
             <% else %>

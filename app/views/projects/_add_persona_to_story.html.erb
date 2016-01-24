@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="add_personas_to_<%= story.id %>" tabindex="-1" role="dialog" aria-labelledby="add_personas_to_<%= story.id %>">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <label class="label-text">DFASGFDGS</label>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+        <h4 class="modal-title" id="myModalLabel">DFASGFDGS<i class="material-icons modal-section-caret">keyboard_arrow_down</i></h4>
+      </div>
+      
+      <div class="modal-body">
+
+        <% current_user.personas.each do |persona| %>
+          
+            <%= link_to "#{persona.persona_name}", add_persona_path(story_id: story.id, persona_id: persona.id), method: :post, remote: true %>
+
+        <% end %>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-sm-12 text-right">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
