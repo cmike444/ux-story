@@ -6,119 +6,111 @@
             <%= material_icon.arrow_back.md_36 %>
           <% end %>
         </span>
-        <h1>
+        <h1 class="animated fadeIn">
           <%= @project.name %>&nbsp;
-          <!-- <span class="small">All<span class="caret"></span></span> -->
         </h1>
       </div>
       <div class="col-sm-6 text-right">
-        <%= image_tag "clint.png", class: 'img-circle', size: "44" %>
-        <div id="add_team_member">
+        <%= image_tag "clint.png", class: 'img-circle animated fadeInRight', size: "44" %>
+        <div id="add_team_member" class="animated zoomIn">
           <i class="fa fa-plus"></i>
         </div>
       </div>
     </div>
 </div>
 
-<p id="notice"><%= notice %></p>
-
-<div class="container-fluid project">
+<div class="container-fluid page">
   <div class="row">
     <div class="col-sm-12 sidebar">
 
-      <div class="tabs-left">
-        <div class="tb-tabs tabbable tb-tabs-framed">
-          <ul class="nav nav-tabs">
-            <li>
-              <a href="#tabs_12953448735688bbf84067a-tab_3" class="btn" data-toggle="tab" title="Add Feature">Create New Feature</a>
-            </li>
-            <li class="active">
-              <a href="#tabs_12953448735688bbf84067a-tab_1" data-toggle="tab" title="Title #1">
-                <label>Feature Name</label>
-                <p>As a gun slinger, I have a problem protecting my gold from greedy outlaws.</p>
-              </a>
-            </li>
-          </ul>
-          <div class="tab-content dark">
-            <div id="tabs_12953448735688bbf84067a-tab_1" class="tab-pane entry-content fade in clearfix active">
-              <div class="row feature-story-controls">
-                <div class="col-md-12">
-                  <div class="btn-group pull-right" role="group">
-                    <button class="btn btn-primary">New Story</button>
-                  </div>
-                </div>
-              </div>
-              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel">
-                  <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                      <i class="fa fa-bars pull-right"></i>
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <b>When</b> I'm hungry<b>, I want </b>to eat a sandwich <b>so I can</b> no longer be hungry.
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <%= image_tag "avatar.jpg", class: "media-object img-circle", size: "44" %>
-                          </a>
+      <div class="row">
+        <div class="col-sm-12 text-right">
+          <div class="btn-group">
+            <button class="btn btn-default">
+              Share 
+            </button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#new_feature">
+              <i class="fa fa-plus"></i> &nbsp;New Section
+            </button>
+          </div>
+          <br/><br/><br/>
+        </div>
+      </div>
+
+      <% if @project.features.any? %>
+        <% @project.features.each do |feature| %>
+
+        <div class="feature-section-wrapper">
+          <div class="btn-group">
+            <i class="material-icons feature-section-add" data-toggle="modal" data-target="#feature_<%= feature.id %>_story">add</i>
+            <i class="material-icons feature-section-more dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</i>
+            <ul class="dropdown-menu">
+              <li><a href="#">Delete Feature</a></li>
+              <li><a href="#">Share Stories</a></li>
+              <li><a href="#">Request Input</a></li>
+            </ul>
+          </div>
+          <div class="feature-section" data-toggle="collapse" data-target="#feature_<%= feature.id %>" aria-expanded="false" aria-controls="feature_<%= feature.id %>">
+            <i class="material-icons feature-section-caret">keyboard_arrow_up</i>
+            <h6>
+              <%= feature.name %>
+            </h6>
+            <hr>
+          </div>
+          
+          <div class="collapse in" id="feature_<%= feature.id %>">
+            <ul class="list-group">
+            <% if feature.stories.any? %>
+              <% feature.stories.each do |story| %>
+                <li class="list-group-item">
+                  <p>
+                    <a data-toggle="collapse" href="#story_<%= story.id %>" aria-expanded="false" aria-controls="story_<%= story.id %>">
+                      <% if story.payload.present? %>
+                        <%= story.payload.html_safe %>
+                      <% else %>
+                        <b>When</b> situation<b>, I want</b> action <b>so that</b> expected outcome.
+                      <% end %>
+                    </a>
+                  </p>
+                  <div class="collapse" id="story_<%= story.id %>">
+                    <div class="row">
+                      <div class="col-sm-12 page">
+                        <div id="add_persona_to_story">
+                          <i class="fa fa-plus"></i>
                         </div>
-                        <div class="media-body">
-                          <h4 class="media-heading">Reaction Randy</h4>
-                          <b>When</b> I'm hungry<b>, I want </b>to eat a sandwich <b>so I can</b> no longer be hungry.
-                        </div>
+                        <label class="label-text">Select Personas</label>
+                        <br/><br/>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <i class="fa fa-bars pull-right"></i>
-                        <b>When</b> I'm shopping online<b>, I want </b>easy shopping cart functionality <b>so that</b> I can easily purchase items online.
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-heading" role="tab" id="headingThree">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <i class="fa fa-bars pull-right"></i>
-                        <b>When</b> I'm hungry<b>, I want </b>to eat a sandwich <b>so I can</b> no longer be hungry.
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
+                </li>
+
+              <% end %>
+            <% else %>
+              <div class="">
+                <p>No stories for this feature yet...</p>
               </div>
-            </div><!-- .tab-pane (end) -->
+            <% end %>
+            </ul>
+          </div>
 
+        </div>
 
-            <div id="tabs_12953448735688bbf84067a-tab_3" class="tab-pane entry-content fade in clearfix">
-              <label>New Feature Name</label>
-              <input class="form-control" placeholder="Fort Knox"><br/>
-              <label>Problem Statement</label>
-              <textarea class="form-control">As a gunslinger, I have a problem protecting my gold from greedy outlaws.</textarea><br/>
-              <button class="btn btn-primary pull-right">Save Feature</button>
-            </div><!-- .tab-pane (end) -->
-          </div><!-- .tab-content (end) -->
-        </div><!-- .tabbable (end) -->
+        <%= render partial: "new_feature_story", locals: { feature: feature } %>
+
+        <%= render partial: "new_feature", locals: { feature: feature } %>
+
+        <% end %>
+      <% end %>
+      <br/>
+      <div class="new-feature-section">
+        <label><i class="material-icons">add</i>Add New Feature</label>
       </div>
+      <br/>
+      <br/>
+      
 
+      
     </div>
   </div>
 </div>

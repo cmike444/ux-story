@@ -57,6 +57,34 @@ ready = function() {
     });
   });
 
+
+  function resizeInput() {
+    var size = $(this).val().length;
+    $(this).attr('size', size);
+  }
+
+  $('.form-story').keyup(resizeInput).each(resizeInput);
+
+  $('.new_situation').attr('size', 7);
+  $('.new_action').attr('size', 5);
+  $('.new_outcome').attr('size', 16);
+
+  $('.feature-section').on('click', function(){
+    var wrapper = $(this).parent('.feature-section-wrapper')
+    var open = wrapper.find(".collapse").hasClass('in')
+
+    if (open) {
+      console.log("Closed")
+      wrapper.find('.feature-section-caret').addClass('r180')
+    } 
+    else {
+      console.log("Open") 
+      $(this).find('.feature-section-caret').removeClass('r180')
+    }
+
+
+  })
+  
 };
 
 $(document).ready(ready);

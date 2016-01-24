@@ -1,0 +1,140 @@
+<div class="tabs-left">
+  <div class="tb-tabs tabbable tb-tabs-framed">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#create_new_feature" class="btn" data-toggle="tab" title="Add Feature">Create New Feature</a>
+      </li>
+
+      <% if @project.features.any? %>
+        <% @project.features.each do |f| %>
+          <li>
+            <a href="#feature_<%= f.id %>" data-toggle="tab" title="Title #1">
+              <label><%= f.name ||= "Feature ##{f.id}" %></label>
+              <p><%= truncate(f.problem_statement ||= "As a gun slinger, I have a problem protecting my gold from greedy outlaws.", length: 70) %></p>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+      
+    </ul>
+    <div class="tab-content dark">
+      <div id="tabs_12953448735688bbf84067a-tab_1" class="tab-pane entry-content fade in clearfix">
+        <div class="row feature-story-controls">
+          <div class="col-md-12">
+            <div class="btn-group pull-right" role="group">
+              <button class="btn btn-primary">New Story</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          
+          <% if @project.stories.any? %>
+
+              <div class="panel">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <i class="fa fa-bars pull-right"></i>
+                    <i class="fa fa-close pull-right"></i>
+                    <i class="fa fa-edit pull-right"></i>
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <b>When</b> I'm hungry<b>, I want </b>to eat a sandwich <b>so I can</b> no longer be hungry.
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div id="story_personas">
+                          <label>Applied to 2 personas</label>
+                          <div id="add_persona_to_story">
+                            <i class="fa fa-plus"></i>
+                          </div>
+                          <%= image_tag "clint.png", class: 'img-circle', size: "44" %>
+                          <%= image_tag "avatar.jpg", class: 'img-circle', size: "44" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          <% end %>
+        </div>
+      </div><!-- .tab-pane (end) -->
+      
+      <% if @project.features.any? %>
+        <% @project.features.each do |f| %>
+          <div id="feature_<%= f.id %>" class="tab-pane entry-content fade in clearfix">
+
+            <div id="feature-story-form">
+              <label>
+                <b>When</b> <input class="form-story" placeholder="situation" size="8"/>,
+                <b>I want</b> <input class="form-story" placeholder="action" size="6" />
+                <b>so I can</b> <input class="form-story" placeholder="expected outcome" size="10" />
+              </label>
+                <button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personas  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                <button class="btn btn-primary btn-xs">Add Story</button>
+            </div>
+            <br/>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <% if f.stories.any? %>
+                <% f.stories.each do |story| %>  
+                  <div class="panel">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <i class="fa fa-bars pull-right"></i>
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#story-<%= story.id %>" aria-expanded="true" aria-controls="collapseOne">
+                          <b>When</b> I'm hungry<b>, I want </b>to eat a sandwich <b>so I can</b> no longer be hungry.
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="story-<%= story.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        <div class="media">
+                          <div class="media-left">
+                            <a href="#">
+                              <%= image_tag "avatar.jpg", class: "media-object img-circle", size: "44" %>
+                            </a>
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">Reaction Randy</h4>
+                            <b>When</b> I'm hungry<b>, I want </b>to eat a sandwich <b>so I can</b> no longer be hungry.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+        
+          </div>
+        <% end %>
+      <% end %>
+
+      <div id="create_new_feature" class="tab-pane entry-content fade in clearfix active">
+        <%= form_for Feature.new do |f| %>
+
+          <label>Feature Name</label>
+          <%= f.text_field :name, class: "form-control", placeholder: "New Feature ##{@project.features.size+1}" %><br/>
+          <label>Problem Statement</label>
+          <%= f.text_area :problem_statement, class: "form-control", placeholder: "Write a short description of this feature..." %><br/>
+          <%= f.hidden_field :project_id, value: @project.id %>
+          <div class="actions">
+            <%= f.submit "Save Feature", class: "btn btn-primary pull-right" %>
+          </div>
+          
+        <% end %>
+        
+      </div><!-- .tab-pane (end) -->
+    </div><!-- .tab-content (end) -->
+  </div><!-- .tabbable (end) -->
+</div>

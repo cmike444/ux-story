@@ -134,6 +134,7 @@ p {
       color: #51596C;
       margin-left: 10px;
       margin-top: 7px;
+      font-size: 16px;
     }
 
     .text-right {
@@ -153,7 +154,6 @@ p {
       position: absolute;
       left: 20px;
       top: 10px;
-      border-right: 1px solid rgba(221, 221, 221, 0.1);
       height: 40px;
 
       i {
@@ -206,6 +206,7 @@ p {
 
     .panel {
       box-shadow: none;
+
     }
   }
 }
@@ -293,7 +294,8 @@ p {
 }
 
 .panel-group .panel + .panel {
-  margin-top: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .panel-group .panel-title {
@@ -323,9 +325,9 @@ p {
   font-family: "Lato", "Helvetica Neue", Arial;
 
   &.btn-default {
-    color: #898f9a;
+    color: #3A506B;
     background: none;
-    border-color: #ececec;
+    border-color: #3A506B;
   }
 
   &.btn-primary {
@@ -389,4 +391,42 @@ p {
 button.btn {
     background: none;
     border: 1px solid #ececec;
+}
+
+.radio input[type="radio"], 
+.radio-inline input[type="radio"], 
+.checkbox input[type="checkbox"], 
+.checkbox-inline input[type="checkbox"] {
+  top: 2px;
+}
+
+.projects {
+
+  .list-group {
+
+    .list-group-item {
+      padding: 0;
+      border: none;
+      background: none;
+
+      a {
+        padding: 10px 15px;
+        background: #fff;
+        border-radius: 2px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .panel-title {
+    margin: 15px;
+  }
+
+  a {
+    color: #23527c;
+
+    &:hover {
+
+    }
+  }
 }

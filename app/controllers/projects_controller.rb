@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @story = Story.new
     respond_with(@project)
   end
 
