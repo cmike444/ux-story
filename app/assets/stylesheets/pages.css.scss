@@ -1,6 +1,4 @@
-.inline-block {
-  display: inline-block !important;
-}
+@import "colors";
 
 .ux-story-group {
 
@@ -49,10 +47,10 @@ border-right-color: #fff;
 }
 
 .panel-group .panel-heading + .panel-collapse > .panel-body {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid $border-primary;
   background: #fbfbfb;
-  border-right: 1px solid #ececec;
-  border-left: 1px solid #ececec;
+  border-right: 1px solid $border-primary;
+  border-left: 1px solid $border-primary;
 }
 
 .projects {
@@ -60,7 +58,7 @@ border-right-color: #fff;
 
     .panel {
       border-radius: 2px;
-      border-bottom: 1px solid #ececec;
+      border-bottom: 1px solid $border-primary;
 
       .panel-heading {
         padding: 15px 15px

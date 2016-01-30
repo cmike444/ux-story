@@ -1,0 +1,20 @@
+// Padding Helpers
+.padding-5-5    { padding: 5px; }
+.padding-15-15  { padding: 15px; }
+.padding-30-30  { padding: 30px; }
+.padding-45-45  { padding: 45px; }
+
+.padding-5-0    { padding: 5px 0; }
+.padding-15-0   { padding: 15px 0; }
+.padding-30-0   { padding: 30px 0; }
+.padding-45-0   { padding: 45px 0; }
+
+.padding-15-5   { padding: 15px 45px; }
+.padding-15-30  { padding: 15px 30px; }
+.padding-15-45  { padding: 15px 45px; }
+
+
+// Display Helpers
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.none         { display: none; }

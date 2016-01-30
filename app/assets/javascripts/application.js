@@ -83,7 +83,11 @@ ready = function() {
     }
 
 
-  })
+  });
+
+  $('.remove_persona_from_story_button').on('click', function(){
+    $(this).parent('.story_persona_img_wrapper').removeClass('fadeInLeft').addClass('zoomOut')
+  });
   
 };
 

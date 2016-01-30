@@ -3,7 +3,6 @@
     <div class="col-sm-6 text-left">
       <h1 class="animated fadeIn">
         My Projects&nbsp;
-        <!-- <span class="small">All<span class="caret"></span></span> -->
       </h1>
     </div>
     <div class="col-sm-6 text-right">
@@ -20,19 +19,23 @@
   <div class="row">
     <% @projects.each do |project| %>
       <%= link_to project_path(project) do %>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <div class="panel">
             <div class="panel-heading">
-              <h3 class="panel-title"><%= project.name ||= "Project ##{project.id}" %></h3>
+              <h3 class="panel-title"><%= project.name ||= "Project ##{project.id}" %>
+                <i class="material-icons feature-section-more dropdown-toggle pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</i>
+              </h3>
             </div>
             <div class="panel-body">
-              <div class="col-sm-6">
-                <h3><%= project.features.size %></h3>
-                <small>Sections</small>
-              </div>
-              <div class="col-sm-6">
+              <% if project.personas.any? %>
+                <%= render partial: "projects/index_partials/personas", locals: { project: project } %>
+              <% else %>
+                <%= render partial: "projects/index_partials/empty_personas" %>
+              <% end %>
+              
+              <div class="col-sm-12">
                 <h3><%= project.stories.size %></h3>
-                <small>Stories</small>
+                <label class="label-text">Total Stories</label>
               </div>
             </div>
           </div>

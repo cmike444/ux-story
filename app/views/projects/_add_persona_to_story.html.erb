@@ -3,16 +3,18 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <label class="label-text">DFASGFDGS</label>
+        <label class="label-text">User Story</label>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
-        <h4 class="modal-title" id="myModalLabel">DFASGFDGS<i class="material-icons modal-section-caret">keyboard_arrow_down</i></h4>
+        <h4 class="modal-title" id="myModalLabel"><%= story.payload.html_safe %><i class="material-icons modal-section-caret">keyboard_arrow_down</i></h4>
       </div>
       
       <div class="modal-body">
 
         <% current_user.personas.each do |persona| %>
           
-            <%= link_to "#{persona.persona_name}", add_persona_path(story_id: story.id, persona_id: persona.id), method: :post, remote: true %>
+            <%= link_to add_persona_path(story_id: story.id, persona_id: persona.id), method: :post, remote: true, class: 'persona_img' do %>
+              <%= image_tag "clint.png", class: 'img-circle #{}', size: '44' %>
+            <% end %>
 
         <% end %>
         

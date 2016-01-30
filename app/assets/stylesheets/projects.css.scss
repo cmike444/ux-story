@@ -1,3 +1,5 @@
+@import "colors";
+
 .feature-story-controls {
   height: 60px;
 }
@@ -35,7 +37,7 @@
     }
 
     &:hover {
-      color: cornflowerblue;
+      color: $primary-color;
     }
 
     i {
@@ -63,12 +65,18 @@
 
       i {
         color: #999;
+        cursor: pointer;
 
         &:hover,
         &:active,
         &:focus {
-          color: cornflowerblue;
+          color: $primary-color;
         }
+
+        &.feature-section-add {
+          color: $primary-color;
+        }
+
       }
 
       ul {
@@ -105,6 +113,26 @@
       font-size: 16px;
       padding-left: 15px;
     }
+
+    #section_empty {
+
+      p.empty_title {
+        font-family: "Lato", "Helvetica", sans-serif;
+        font-size: 24px;
+        font-weight: 300;
+        color: #454548;
+      }
+
+      p.empty_caption {
+        font-family: "Lato", "Helvetica", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: #999;
+      }
+
+    }
+
+
 
     .feature-section {
       padding: 50px 0;

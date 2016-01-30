@@ -1,14 +1,13 @@
 <!-- Modal -->
-<div class="modal fade" id="new_feature" tabindex="-1" role="dialog" aria-labelledby="new_feature">
+<div class="modal fade" id="new_feature" tabindex="-1" role="dialog" aria-labelledby="new_project">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <%= form_for @project.features.build do |f| %>
+      <%= form_for Project.new do |f| %>
       
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
-          <label class="label-text">New Section</label>
-          <h4 class="modal-title"><%= f.text_field :name, class: "form-story", placeholder: "New Section ##{@project.features.size+1}" %></h4>
-          <%= f.hidden_field :project_id, value: @project.id %>
+          <label class="label-text">New Feature</label>
+          <h4 class="modal-title"><%= f.text_field :name, class: "form-story", placeholder: "New Project ##{current_user.projects.size+1}" %></h4>
         </div>
         
         
@@ -16,7 +15,7 @@
           <div class="row">
             <div class="col-sm-12 text-right">
               <div class="actions">
-                <%= f.submit "Save Section", class: "btn btn-primary pull-right" %>
+                <%= f.submit "Save Feature", class: "btn btn-primary pull-right" %>
               </div>
             </div>
           </div>

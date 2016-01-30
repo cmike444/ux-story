@@ -1,3 +1,19 @@
+@import 'colors';
+
+.modal {
+  margin-top: 100px;
+}
+
+.modal-backdrop {
+  background: $background_primary_dk;
+  z-index: 1049;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+
 .modal.fade .modal-dialog {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
@@ -40,6 +56,10 @@
     vertical-align: bottom;
     margin-left: 10px;
     color: #545E73;
+  }
+
+  .modal-title {
+    font-weight: 300;
   }
 
   .modal-header,

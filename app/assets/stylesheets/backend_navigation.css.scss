@@ -1,6 +1,8 @@
+@import "colors";
+
 #app-nav {
   box-shadow: none !important;
-  background: #1E2432 !important;
+  background: $background_primary_dk !important;
   padding: 0 60px;
   z-index: 1048;
   margin-bottom: 0px;
@@ -29,7 +31,7 @@
       text-transform: uppercase;
       font-size: 85%;
       font-weight: 900 !important;
-      color: cornflowerblue;
+      color: $secondary_color;
     }
   }
 
@@ -46,7 +48,7 @@
 
 .add_new_fab {
   display: inline-block;
-  background: cornflowerblue;
+  background: $primary_color;
   color: #fff;
   height: 54px;
   width: 54px;

@@ -1,0 +1,8 @@
+<div class="story_persona_img_wrapper animated fadeInLeft">
+  <%= link_to remove_persona_path(story_id: story.id, persona_id: persona.id), method: :patch, remote: true, class: 'remove_persona_from_story_button animated zoomIn' do %>
+    <div>
+      <i class="material-icons">close</i>
+    </div>
+  <% end %>
+  <%= image_tag "clint.png", class: 'img-circle', size: '44' %>
+</div>

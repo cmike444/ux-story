@@ -27,9 +27,9 @@
         <div class="col-sm-12 text-right">
           <div class="btn-group">
             <button class="btn btn-default">
-              Share 
+              Export 
             </button>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#new_feature">
+            <button class="btn btn-default" data-toggle="modal" data-target="#new_feature">
               <i class="fa fa-plus"></i> &nbsp;New Section
             </button>
           </div>
@@ -59,52 +59,48 @@
           </div>
           
           <div class="collapse in" id="feature_<%= feature.id %>">
-            <ul class="list-group">
+            <%= feature.problem_statement %>
             <% if feature.stories.any? %>
               <% feature.stories.each do |story| %>
-                <li class="list-group-item">
-                  <p>
-                    <a data-toggle="collapse" href="#story_<%= story.id %>" aria-expanded="false" aria-controls="story_<%= story.id %>">
-                      <% if story.payload.present? %>
-                        <%= story.payload.html_safe %>
-                      <% else %>
-                        <b>When</b> situation<b>, I want</b> action <b>so that</b> expected outcome.
-                      <% end %>
-                    </a>
-                  </p>
-                  <div class="collapse" id="story_<%= story.id %>">
-                    <div class="row">
-                      <div class="col-sm-12 page">
-                        <div id="add_persona_to_story_wrapper">
-                          <div id="add_persona_to_story" data-toggle="modal" data-target="#add_personas_to_<%= story.id %>">
-                            <i class="fa fa-plus"></i>
-                          </div>
-                          <% if story.personas.any? %>
-                            <% story.personas.each do |persona| %>
-                            <%= link_to remove_persona_path(story_id: story.id, persona_id: persona.id), method: :patch, remote: true do %>
-                              <%= image_tag "clint.png", class: 'img-circle animated fadeInLeft', size: '44' %>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <p>
+                      <a data-toggle="collapse" href="#story_<%= story.id %>" aria-expanded="false" aria-controls="story_<%= story.id %>">
+                        <% if story.payload.present? %>
+                          <%= story.payload.html_safe %>
+                        <% else %>
+                          <b>When</b> situation<b>, I want</b> action <b>so that</b> expected outcome.
+                        <% end %>
+                      </a>
+                    </p>
+                    <div class="collapse" id="story_<%= story.id %>">
+                      <div class="row">
+                        <div class="col-sm-12 padding-15-45">
+                          <label class="label-text">Personas</label>
+                          <div id="add_persona_to_story_wrapper">
+                            <div id="add_persona_to_story" data-toggle="modal" data-target="#add_personas_to_<%= story.id %>">
+                              <i class="fa fa-plus"></i>
+                            </div>
+                            <% if story.personas.any? %>
+                              <% story.personas.each do |persona| %>
+                              <%= render partial: "story_persona_avatar", locals: { persona: persona, story: story } %>
                             <% end %>
-                          <% end %>
-                          <% else %>
-                            <label class="label-text">Select Personas</label>
-                          <% end %>
+                            <% else %>
+                              <label class="label-text">Select Personas</label>
+                            <% end %>
+                          </div>
+                          <%= render partial: "add_persona_to_story", locals: { story: story } %>
+                          <br/><br/>
                         </div>
-                        <%= render partial: "add_persona_to_story", locals: { story: story } %>
-                        <br/><br/>
                       </div>
                     </div>
-                  </div>
-                </li>
-
-          
-
+                  </li>
+                </ul>
               <% end %>
             <% else %>
-              <div class="">
-                <p>No stories for this feature yet...</p>
-              </div>
+              <%= render partial: "projects/show_partials/empty_stories" %>
             <% end %>
-            </ul>
+            
           </div>
 
         </div>
@@ -116,9 +112,9 @@
         <% end %>
       <% end %>
       <br/>
-      <div class="new-feature-section">
+      <!-- <div class="new-feature-section">
         <label><i class="material-icons">add</i>Add New Feature</label>
-      </div>
+      </div> -->
       <br/>
       <br/>
       

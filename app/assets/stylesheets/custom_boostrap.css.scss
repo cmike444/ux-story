@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "colors";
 
 @media (min-width: 1200px) {
   .container {
@@ -97,7 +98,7 @@ p {
 }
 
 .backend {
-  background: #f1f3f3;
+  background: $background_primary_lt;
 
   .navbar {
     margin-bottom: 0px;
@@ -105,7 +106,7 @@ p {
 }
 
 .secondary-nav {
-    background: #1E2432;
+    background: $background_primary_dk;
     box-shadow: 0px 0px 3px #bbb;
     margin-bottom: 60px;
     height: 100px;
@@ -214,8 +215,8 @@ p {
 .nav.nav-tabs {
   background: #fbfbfb;
   border-radius: 0px;
-  border-left: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
+  border-left: 1px solid $border-primary;
+  border-bottom: 1px solid $border-primary;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
@@ -223,16 +224,16 @@ p {
 .nav-tabs > li > a {
   border-radius: 0px;
   margin-right: 0px;
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
-  border-right: 1px solid #ececec;
+  border-top: 1px solid $border-primary;
+  border-bottom: 1px solid $border-primary;
+  border-right: 1px solid $border-primary;
 }
 
 .nav-tabs > li {
 
   &:first-child {
     a {
-      color: cornflowerblue;
+      color: $primary_color;
     }
   }
 
@@ -245,25 +246,25 @@ p {
 .nav-tabs > li.active > a:hover, 
 .nav-tabs > li.active > a:focus {
   border-left: 1px solid rgba(255,255,255,0);
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
+  border-top: 1px solid $border-primary;
+  border-bottom: 1px solid $border-primary;
   border-right: 1px solid #fff
 }
 
 .nav-tabs > li > a {
   padding-right: 50px;
-  border-top: 1px solid #ececec;
+  border-top: 1px solid $border-primary;
   border-bottom: 1px solid rgba(255,255,255,0);
-  border-right: 1px solid #ececec;
+  border-right: 1px solid $border-primary;
   color: #bbb;
 
   &:hover {
     background: #fff;
     border-left: 1px solid rgba(255,255,255,0);
     border-radius: 0px;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
-    border-right: 1px solid #ececec;
+    border-top: 1px solid $border-primary;
+    border-bottom: 1px solid $border-primary;
+    border-right: 1px solid $border-primary;
   }
 }
 
@@ -272,7 +273,7 @@ p {
 
 .tab-content {
   background: #fff;
-  border: 1px solid #ececec;
+  border: 1px solid $border-primary;
   padding: 15px 20px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -325,20 +326,25 @@ p {
   font-family: "Lato", "Helvetica Neue", Arial;
 
   &.btn-default {
-    color: #3A506B;
+    color: #656568;
     background: none;
-    border-color: #3A506B;
+    border-color: #656568;
   }
 
   &.btn-primary {
     color: #fff;
-    background: #3A506B;
-    border-color: #3A506B;
-    text-shadow: 0px 1px 1px #444;
+    background: $primary_color;
+    border-color: $primary_color_dk;
+    text-shadow: 0px 1px 0 #666;
 
     &:hover {
-      background: #51596C;
+      background: $primary_color_dk;
     }
+  }
+
+  &.btn-white {
+    border-color: white;
+    color: white;
   }
 }
 
@@ -347,7 +353,7 @@ p {
   padding: 22px 22px;
   font-size: 16px;
   font-weight: 300;
-  border: 1px solid #ececec;
+  border: 1px solid $border-primary;
 }
 
 .placeholder {
@@ -375,22 +381,9 @@ p {
    } // Safari and Chrome
 }
 
-.modal {
-  margin-top: 100px;
-}
-
-.modal-backdrop {
-  background: #1E2432;
-  z-index: 1049;
-
-  &.in {
-    opacity: 1;
-  }
-}
-
 button.btn {
     background: none;
-    border: 1px solid #ececec;
+    border: 1px solid $border-primary;
 }
 
 .radio input[type="radio"], 
@@ -409,11 +402,12 @@ button.btn {
       border: none;
       background: none;
 
-      a {
+      p a {
         padding: 10px 15px;
         background: #fff;
         border-radius: 2px;
         display: inline-block;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1)
       }
     }
   }
