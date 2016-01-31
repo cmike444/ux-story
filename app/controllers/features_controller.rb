@@ -9,7 +9,10 @@ class FeaturesController < ApplicationController
   end
 
   def show
-    respond_with(@feature)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @feature.to_csv }
+    end
   end
 
   def new

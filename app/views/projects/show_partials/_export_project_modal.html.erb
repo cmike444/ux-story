@@ -1,0 +1,70 @@
+<!-- Modal -->
+<div class="modal fade" id="export_project" tabindex="-1" role="dialog" aria-labelledby="new_project">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-md">
+      
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+          <label class="label-text">Export Project</label>
+          <h4 class="modal-title" id="myModalLabel"><%= project.name %></h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-link"></i>&nbsp; URL<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <%= link_to project_path(format: 'csv') do %>
+                    <button class="btn btn-lg btn-block">
+                      <i class="fa fa-file-o"></i>&nbsp; CSV
+                    </button>
+                  <% end %>
+                </li>
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-file-excel-o"></i>&nbsp; XLS<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-file-text-o"></i>&nbsp; TXT<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-file-pdf-o"></i>&nbsp; PDF<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-file-code-o"></i>&nbsp; HTML<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-sm-12 text-right">
+              <div class="actions">
+                <button class="btn btn-primary pull-right" data-dismiss="modal">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>

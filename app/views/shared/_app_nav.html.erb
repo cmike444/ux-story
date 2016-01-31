@@ -21,6 +21,7 @@
                 <% end %>
                 <ul class="dropdown-menu normal-menu">
                   <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
+                  <li><%= link_to 'My Projects', projects_path %></li>
                   <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
                 </ul>
               </li>

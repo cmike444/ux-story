@@ -32,7 +32,15 @@ class ProjectsController < ApplicationController
 
   def show
     @story = Story.new
-    respond_with(@project)
+    # respond_with(@project)
+
+    respond_to do |format|
+      format.html
+      format.csv { 
+        send_data @project.to_csv,
+        :disposition => "attachment; filename=#{@project.name.gsub(' ', '_')}.csv" 
+      }
+    end
   end
 
   def new

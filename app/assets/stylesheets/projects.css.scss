@@ -193,3 +193,35 @@
 #feature_problem_statement {
   width: 100%;
 }
+
+#export_project,
+.export_feature {
+
+  .list-group {
+
+    .list-group-item {
+      margin: 30px 0;
+      
+
+      .btn {
+        color: #fff;
+        font-size: 12px;
+      }
+
+      span.label {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+        font-size: 9px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+    .btn {
+
+  }
+}

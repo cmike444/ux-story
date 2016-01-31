@@ -325,6 +325,10 @@ p {
   font-weight: 300;
   font-family: "Lato", "Helvetica Neue", Arial;
 
+  &:focus {
+    outline: none;
+  }
+
   &.btn-default {
     color: #656568;
     background: none;
@@ -423,4 +427,8 @@ button.btn {
 
     }
   }
+}
+
+.label-primary {
+  background: $primary_color
 }

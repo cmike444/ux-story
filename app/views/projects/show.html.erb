@@ -26,10 +26,10 @@
       <div class="row">
         <div class="col-sm-12 text-right">
           <div class="btn-group">
-            <button class="btn btn-default">
-              Export 
+            <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#export_project">
+              Export
             </button>
-            <button class="btn btn-default" data-toggle="modal" data-target="#new_feature">
+            <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#new_feature">
               <i class="fa fa-plus"></i> &nbsp;New Section
             </button>
           </div>
@@ -45,9 +45,9 @@
             <i class="material-icons feature-section-add" data-toggle="modal" data-target="#feature_<%= feature.id %>_story">add</i>
             <i class="material-icons feature-section-more dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</i>
             <ul class="dropdown-menu">
-              <li><a href="#">Delete Feature</a></li>
-              <li><a href="#">Share Stories</a></li>
-              <li><a href="#">Request Input</a></li>
+              <li><a href="#">Delete</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#export_feature_<%= feature.id %>">Export</a></li>
+              <li><a href="#">Share</a></li>
             </ul>
           </div>
           <div class="feature-section" data-toggle="collapse" data-target="#feature_<%= feature.id %>" aria-expanded="false" aria-controls="feature_<%= feature.id %>">
@@ -96,6 +96,7 @@
                     </div>
                   </li>
                 </ul>
+                
               <% end %>
             <% else %>
               <%= render partial: "projects/show_partials/empty_stories" %>
@@ -108,7 +109,7 @@
         <%= render partial: "new_feature_story", locals: { feature: feature } %>
 
         <%= render partial: "new_feature", locals: { feature: feature } %>
-
+        <%= render partial: "projects/show_partials/export_feature_modal", locals: { feature: feature } %>
         <% end %>
       <% end %>
       <br/>
@@ -118,7 +119,7 @@
       <br/>
       <br/>
       
-
+      <%= render partial: "projects/show_partials/export_project_modal", locals: { project: @project } %>
       
     </div>
   </div>
