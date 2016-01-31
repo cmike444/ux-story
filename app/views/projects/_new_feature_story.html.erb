@@ -18,17 +18,34 @@
                   <br/> 
                   <%= f.hidden_field :feature_id, value: feature.id %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      
+                      <div class="persona-list"> 
+                          <label class="label-text">Select Personas</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <% current_user.personas.each do |persona| %>
+            
+                            <% if @project.personas.exists?(persona) %>
+                              <%= link_to add_persona_path(story_id: feature.stories.size+1, persona_id: persona.id), method: :post, remote: true, class: 'persona_img selected' do %>
+                                <%= image_tag "clint.png", class: 'img-circle #{}', size: '44' %>
+                              <% end %>
+                            <% else %>
+                              <%= link_to add_persona_path(story_id: feature.stories.size+1, persona_id: persona.id), method: :post, remote: true, class: 'persona_img' do %>
+                                <%= image_tag "clint.png", class: 'img-circle #{}', size: '44' %>
+                              <% end %>
+                            <% end %>
+                          <% end %>
+                        </div>
+
+                    </div>
+                  </div>
                 </div>
                 
                 <div class="modal-footer">
                   <div class="row">
-                    <div class="col-sm-7 text-left">
-                      <div id="add_persona_to_story">
-                        <i class="fa fa-plus"></i>
-                      </div>
-                      <label class="label-text">Select Personas</label>
-                    </div>
-                    <div class="col-sm-5 text-right">
+                    
+                    <div class="col-sm-12 text-right">
                       <div class="checkbox">
                         <label class="label-text">
                           <input type="checkbox"> Create Another
