@@ -1,6 +1,38 @@
 <div class="row">
-  <div id="section_empty" class="col-sm-12 animated fadeIn">
-    <p class="empty_title">Nothing here...</p>
-    <p class="empty_caption">Click the plus on the right to add your stories.</p>
+  <div id="section_empty" class="col-lg-8 hidden-md animated fadeIn">
+    <div>
+      <p class="empty_story_format">
+        <b>When</b> <span><% 21.times do %>&nbsp;<% end %></span>
+        <b>, I want</b> <span><% 10.times do %>&nbsp;<% end %></span> 
+        <b>so that</b> <span><% 41.times do %>&nbsp;<% end %>.</span>
+      </p>
+    </div>
+    <div>
+      <p class="empty_story_format">
+        <b>When</b> <span><% 18.times do %>&nbsp;<% end %></span>
+        <b>, I want</b> <span><% 15.times do %>&nbsp;<% end %></span> 
+        <b>so that</b> <span><% 30.times do %>&nbsp;<% end %>.</span>
+      </p>
+    </div>
+    <div>
+      <p class="empty_story_format">
+        <b>When</b> <span><% 26.times do %>&nbsp;<% end %></span>
+        <b>, I want</b> <span><% 12.times do %>&nbsp;<% end %></span> 
+        <b>so that</b> <span><% 45.times do %>&nbsp;<% end %>.</span>
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="new_section_explainer_wrapper">
+      <div class="new_section_explainer">
+        <p class="empty_title">No stories yet...</p>
+        <p class="empty_caption">
+          Add new stories by using the plus.<br/><br/>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#feature_<%= feature.id %>_story"><i class="fa fa-plus"></i>&nbsp; Create First Story</button>
+        </p>
+
+      </div>
+
+    </div>
   </div>
 </div>

@@ -99,7 +99,7 @@
                 
               <% end %>
             <% else %>
-              <%= render partial: "projects/show_partials/empty_stories" %>
+              <%= render partial: "projects/show_partials/empty_stories", locals: { feature: feature } %>
             <% end %>
             
           </div>
