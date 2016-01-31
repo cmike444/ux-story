@@ -26,10 +26,10 @@
       <div class="row">
         <div class="col-sm-12 text-right">
           <div class="btn-group">
-            <button class="btn btn-default">
+            <button class="btn btn-default btn-sm">
               Export 
             </button>
-            <button class="btn btn-default" data-toggle="modal" data-target="#new_feature">
+            <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#new_feature">
               <i class="fa fa-plus"></i> &nbsp;New Section
             </button>
           </div>
@@ -50,6 +50,7 @@
               <li><a href="#">Request Input</a></li>
             </ul>
           </div>
+          
           <div class="feature-section" data-toggle="collapse" data-target="#feature_<%= feature.id %>" aria-expanded="false" aria-controls="feature_<%= feature.id %>">
             <i class="material-icons feature-section-caret">keyboard_arrow_up</i>
             <h6>
@@ -65,35 +66,14 @@
                 <ul class="list-group">
                   <li class="list-group-item">
                     <p>
-                      <a data-toggle="collapse" href="#story_<%= story.id %>" aria-expanded="false" aria-controls="story_<%= story.id %>">
+                      <%= link_to story_path(story) do %>
                         <% if story.payload.present? %>
                           <%= story.payload.html_safe %>
                         <% else %>
                           <b>When</b> situation<b>, I want</b> action <b>so that</b> expected outcome.
                         <% end %>
-                      </a>
+                      <% end %>
                     </p>
-                    <div class="collapse" id="story_<%= story.id %>">
-                      <div class="row">
-                        <div class="col-sm-12 padding-15-45">
-                          <label class="label-text">Personas</label>
-                          <div id="add_persona_to_story_wrapper">
-                            <div id="add_persona_to_story" data-toggle="modal" data-target="#add_personas_to_<%= story.id %>">
-                              <i class="fa fa-plus"></i>
-                            </div>
-                            <% if story.personas.any? %>
-                              <% story.personas.each do |persona| %>
-                              <%= render partial: "story_persona_avatar", locals: { persona: persona, story: story } %>
-                            <% end %>
-                            <% else %>
-                              <label class="label-text">Select Personas</label>
-                            <% end %>
-                          </div>
-                          <%= render partial: "add_persona_to_story", locals: { story: story } %>
-                          <br/><br/>
-                        </div>
-                      </div>
-                    </div>
                   </li>
                 </ul>
               <% end %>
@@ -107,18 +87,13 @@
 
         <%= render partial: "new_feature_story", locals: { feature: feature } %>
 
-        <%= render partial: "new_feature", locals: { feature: feature } %>
-
         <% end %>
       <% end %>
       <br/>
-      <!-- <div class="new-feature-section">
-        <label><i class="material-icons">add</i>Add New Feature</label>
-      </div> -->
       <br/>
       <br/>
       
-
+      <%= render partial: "new_feature" %>
       
     </div>
   </div>
