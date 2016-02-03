@@ -7,7 +7,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
           <label class="label-text">New Section</label>
-          <h4 class="modal-title"><%= f.text_field :name, class: "form-story", placeholder: "New Section ##{@project.features.size+1}" %></h4>
+          <h4 class="modal-title"><%= f.text_field :name, class: "form-story width-100", placeholder: "New Section ##{@project.features.size+1}" %></h4>
           <%= f.hidden_field :project_id, value: @project.id %>
         </div>
         

@@ -1,5 +1,6 @@
-  <div class="col-sm-12">
-    <% project.personas.each do |p| %>
+  <div class="col-sm-12 projects-card__personas">
+    <hr>
+    <% project.personas.take(12).each do |p| %>
       <%= image_tag "clint.png", class: 'img-circle', size: '44' %>
     <% end %>
   </div>
