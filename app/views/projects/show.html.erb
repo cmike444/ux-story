@@ -27,7 +27,7 @@
         <div class="col-sm-12 text-right">
           <div class="btn-group">
             <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#export_project">
-              Export
+              Share
             </button>
             <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#new_feature">
               <i class="fa fa-plus"></i> &nbsp;New Section
@@ -45,9 +45,8 @@
             <i class="material-icons feature-section-add" data-toggle="modal" data-target="#feature_<%= feature.id %>_story">add</i>
             <i class="material-icons feature-section-more dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</i>
             <ul class="dropdown-menu">
-              <li><a href="#">Delete</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#export_feature_<%= feature.id %>">Export</a></li>
-              <li><a href="#">Share</a></li>
+              <!-- <li><a href="#">Delete</a></li> -->
+              <li><a href="#" data-toggle="modal" data-target="#export_feature_<%= feature.id %>">Share</a></li>
             </ul>
           </div>
           

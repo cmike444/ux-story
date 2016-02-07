@@ -11,7 +11,10 @@ class FeaturesController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.csv { send_data @feature.to_csv }
+      format.csv { send_data @feature.to_csv,
+        :disposition => "attachment", filename: "#{@feature.project.name.gsub(' ', '_')}.csv" }
+        format.xls { send_data @feature.to_csv(col_sep: '\t'),
+        :disposition => "attachment", filename: "#{@feature.name.gsub(' ', '_')}.xls" }
     end
   end
 

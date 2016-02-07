@@ -5,7 +5,7 @@
       
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
-          <label class="label-text">Export Feature</label>
+          <label class="label-text">Share Feature</label>
           <h4 class="modal-title" id="myModalLabel"><%= feature.name %></h4>
         </div>
 
@@ -26,9 +26,11 @@
                   <% end %>
                 </li>
                 <li class="list-group-item">
-                  <button class="btn btn-lg btn-block">
-                    <i class="fa fa-file-excel-o"></i>&nbsp; XLS<span class="label label-primary">Coming Soon</span>
-                  </button>
+                  <%= link_to feature_path(format: 'xls') do %>
+                    <button class="btn btn-lg btn-block">
+                      <i class="fa fa-file-excel-o"></i>&nbsp; XLS
+                    </button>
+                  <% end %>
                 </li>
               </ul>
             </div>

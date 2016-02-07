@@ -66,7 +66,7 @@ ready = function() {
   $('.form-story').keyup(resizeInput).each(resizeInput);
 
   $('.new_situation').attr('size', 7);
-  $('.new_action').attr('size', 5);
+  $('.new_need').attr('size', 5);
   $('.new_outcome').attr('size', 16);
 
   $('.feature-section').on('click', function(){

@@ -38,8 +38,10 @@ class ProjectsController < ApplicationController
       format.html
       format.csv { 
         send_data @project.to_csv,
-        :disposition => "attachment; filename=#{@project.name.gsub(' ', '_')}.csv" 
-      }
+        :disposition => "attachment", filename: "#{@project.name.gsub(' ', '_')}.csv" }
+      format.xls { 
+        send_data @project.to_csv(col_sep: "\t"),
+        :disposition => "attachment", filename: "#{@project.name.gsub(' ', '_')}.xls" }
     end
   end
 

@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
   # POST /stories.json
   def create
     @story = Story.new(story_params)
-    @story.create_job_story(params[:situation], params[:action], params[:outcome])
+    @story.create_job_story(params[:situation], params[:need], params[:outcome])
 
     respond_to do |format|
       if @story.save
@@ -71,6 +71,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:type, :payload, :feature_id, :draft, :user_id, :situation, :action, :outcome)
+      params.require(:story).permit(:type, :payload, :feature_id, :draft, :user_id, :situation, :need, :outcome)
     end
 end

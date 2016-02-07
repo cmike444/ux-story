@@ -4,10 +4,10 @@ class Feature < ActiveRecord::Base
   has_many :stories
   belongs_to :project
 
-  def to_csv
+  def to_csv(options = {})
       attributes = %w{ payload }
       
-      CSV.generate(headers: true) do |csv|
+      CSV.generate(options) do |csv|
         csv << ["Stories"]
 
         self.stories.each do |story|
