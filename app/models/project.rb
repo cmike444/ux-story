@@ -8,20 +8,20 @@ class Project < ActiveRecord::Base
 
   after_create :create_first_section
 
-    def create_first_section
-      self.features.create(name: "Section #1")
-    end
+  def create_first_section
+    self.features.create(name: "Section #1")
+  end
 
-    def to_csv(options = {})
-      attributes = %w{ payload }
-      
-      CSV.generate(options) do |csv|
-        csv << ["Stories"]
+  def to_csv(options = {})
+    attributes = %w{ payload }
+    
+    CSV.generate(options) do |csv|
+      csv << ["Stories"]
 
-        self.stories.each do |story|
-          csv << ["#{story.sanitized_payload}"]
-        end
-      end   
-    end
+      self.stories.each do |story|
+        csv << ["#{story.sanitized_payload}"]
+      end
+    end   
+  end
 
 end

@@ -38,7 +38,7 @@
               <ul class="list-group">
                 <li class="list-group-item">
                   <button class="btn btn-lg btn-block">
-                    <i class="fa fa-file-text-o"></i>&nbsp; TXT<span class="label label-primary">Coming Soon</span>
+                    <i class="fa fa-file-code-o"></i>&nbsp; HTML<span class="label label-primary">Coming Soon</span>
                   </button>
                 </li>
                 <li class="list-group-item">
@@ -47,9 +47,11 @@
                   </button>
                 </li>
                 <li class="list-group-item">
-                  <button class="btn btn-lg btn-block">
-                    <i class="fa fa-file-code-o"></i>&nbsp; JSON<span class="label label-primary">Coming Soon</span>
-                  </button>
+                  <%= link_to project_path(format: 'json') do %>
+                    <button class="btn btn-lg btn-block">
+                      <i class="fa fa-file-code-o"></i>&nbsp; JSON
+                    </button>
+                  <% end %>
                 </li>
               </ul>
             </div>

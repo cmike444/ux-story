@@ -42,6 +42,9 @@ class ProjectsController < ApplicationController
       format.xls { 
         send_data @project.to_csv(col_sep: "\t"),
         :disposition => "attachment", filename: "#{@project.name.gsub(' ', '_')}.xls" }
+      format.json { 
+        send_data @project.stories.to_json,
+        :disposition => "attachment", filename: "#{@project.name.gsub(' ', '_')}.json" }
     end
   end
 

@@ -15,6 +15,8 @@ class FeaturesController < ApplicationController
         :disposition => "attachment", filename: "#{@feature.project.name.gsub(' ', '_')}.csv" }
         format.xls { send_data @feature.to_csv(col_sep: '\t'),
         :disposition => "attachment", filename: "#{@feature.name.gsub(' ', '_')}.xls" }
+        format.json { send_data @feature.stories.to_json,
+        :disposition => "attachment", filename: "#{@feature.name.gsub(' ', '_')}.json" }
     end
   end
 
