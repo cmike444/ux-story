@@ -7,12 +7,12 @@
           <% end %>
         </span>
         <h1 class="animated fadeIn">
-          <%= @story.payload.html_safe %>&nbsp;
-          <%= link_to edit_story_path(@story) do %><i class="material-icons mdi-14">edit</i><% end %>
+          <%= @story.feature.name %> 
         </h1>
       </div>
       <div class="col-sm-3 text-right">
         
+      </div>
     </div>
 </div>
 
@@ -20,10 +20,27 @@
 
 <div class="container-fluid page">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-7">
+      <blockquote>
+        <h1><%= @story.payload.html_safe %></h1>
+
+        <% if @story.personas.any? %>
+          <footer>
+            <% if @story.personas.size == 1 %>
+              <%= @story.personas.sample.persona_name %> 
+            <% elsif @story.personas.size == 2 %>
+              <%= @story.personas.sample.persona_name %> &amp; 1 other
+            <% elsif @story.personas.size > 1 %>
+              <%= @story.personas.sample.persona_name %> &amp; <%= @story.personas.size-1 %> others
+            <% end %>
+          </footer>
+        <% end %>
+
+      </blockquote>
       <% @story.personas.each do |persona| %>
         <%= image_tag 'clint.png', class: 'img-circle', size: '44' %>
       <% end %>
     </div>
+    <div class="col-sm-5"></div>
   </div>
 </div>

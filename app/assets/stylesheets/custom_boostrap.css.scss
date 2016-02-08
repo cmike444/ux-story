@@ -436,3 +436,16 @@ button.btn {
 .label-primary {
   background: $primary_color
 }
+
+blockquote {
+
+  h1 {
+    font-weight: 300;
+    line-height: 46px;
+    margin-left: 15px;
+  }
+
+  footer {
+    margin-left: 15px;
+  }
+}
