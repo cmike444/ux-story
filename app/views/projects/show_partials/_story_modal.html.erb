@@ -1,0 +1,51 @@
+<!-- Modal -->
+<div class="modal fade" id="story_modal_<%= story.id %>" tabindex="-1" role="dialog" aria-labelledby="new_project">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
+          <i class="material-icons pull-right">more_horiz</i>
+          <label class="label-text">Project Section</label>
+          <h4 class="modal-title" id="myModalLabel"><%= feature.name %></h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <blockquote>
+                <h1><%= story.payload.html_safe %></h1>
+                <% if story.personas.any? %>
+                  <footer>
+                    <% if story.personas.size == 1 %>
+                      <%= story.personas.sample.persona_name %> 
+                    <% elsif story.personas.size == 2 %>
+                      <%= story.personas.sample.persona_name %> &amp; 1 other
+                    <% elsif story.personas.size > 1 %>
+                      <%= story.personas.sample.persona_name %> &amp; <%= story.personas.size-1 %> others
+                    <% end %>
+                  </footer>
+                <% end %>
+              </blockquote>
+              <div class="persona-wrapper">
+                <% story.personas.each do |persona| %>
+                  <%= image_tag persona.avatar ||= "clint.png", class: 'img-circle', size: '60' %>
+                <% end %>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-sm-12 text-right">
+                
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>

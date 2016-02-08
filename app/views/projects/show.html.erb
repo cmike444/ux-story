@@ -65,17 +65,17 @@
                 <ul class="list-group">
                   <li class="list-group-item">
                     <p>
-                      <%= link_to story_path(story) do %>
+                      <a href="#" data-toggle="modal" data-target="#story_modal_<%= story.id %>">
                         <% if story.payload.present? %>
                           <%= story.payload.html_safe %>
                         <% else %>
                           <b>When</b> situation<b>, I want</b> action <b>so that</b> expected outcome.
                         <% end %>
-                      <% end %>
+                      </a>
                     </p>
                   </li>
                 </ul>
-                
+                <%= render partial: "projects/show_partials/story_modal", locals: { story: story, feature: feature } %>
               <% end %>
             <% else %>
               <%= render partial: "projects/show_partials/empty_stories", locals: { feature: feature } %>

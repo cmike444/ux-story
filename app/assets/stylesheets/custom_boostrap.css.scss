@@ -411,7 +411,15 @@ button.btn {
         background: #fff;
         border-radius: 2px;
         display: inline-block;
-        box-shadow: 0 1px 1px rgba(0,0,0,0.1)
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+
+        &:focus {
+          outline: 0;
+        }
+
+        &:active {
+          text-decoration: none;
+        }
       }
     }
   }
@@ -443,9 +451,24 @@ blockquote {
     font-weight: 300;
     line-height: 46px;
     margin-left: 15px;
+    margin-top: 0px;
   }
 
   footer {
     margin-left: 15px;
+  }
+}
+
+.modal {
+  
+  blockquote {
+    border-color: #343A48;
+  }
+
+  .modal-header {
+
+    i.material-icons {
+      margin-right: 10px;
+    }
   }
 }
