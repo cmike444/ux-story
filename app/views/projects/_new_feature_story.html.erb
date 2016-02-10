@@ -16,6 +16,15 @@
                     <b>so I can</b> <%= text_field_tag :outcome, "", id: "new_outcome", class: "form-story new_outcome", placeholder: "expected outcome" %>
                   </h3> 
                   <br/> 
+                  <% if current_user.personas.any? %>
+                    <% current_user.personas.each do |persona| %>
+                      <%= image_tag "clint.png", class: 'img-circle', size: '60' %>
+                    <% end %>
+                    
+                  <% else %>
+                    You have no personas...
+                  <% end %>
+
                   <%= f.hidden_field :feature_id, value: feature.id %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
 
