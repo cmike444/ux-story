@@ -31,11 +31,11 @@
             <div class="panel-body">
               <div class="col-sm-6">
                 <h3><%= project.stories.size %></h3>
-                <label class="label-text">Total Stories</label>
+                <label class="label-text">Stories</label>
               </div>
               <div class="col-sm-6">
                 <h3><%= project.personas.size %></h3>
-                <label class="label-text">Total Personas</label>
+                <label class="label-text">Personas</label>
               </div>
               <% if project.personas.any? %>
                 <%= render partial: "projects/index_partials/personas", locals: { project: project } %>

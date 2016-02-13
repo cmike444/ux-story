@@ -92,6 +92,10 @@ ready = function() {
   $('.persona_img').on('click', function(){
     $(this).toggleClass('selected')
   });
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
   
 };
 

@@ -15,10 +15,11 @@
                     <b>I want</b> <%= text_field_tag :need, "", id: "new_need", class: "form-story new_need", placeholder: "action" %>
                     <b>so I can</b> <%= text_field_tag :outcome, "", id: "new_outcome", class: "form-story new_outcome", placeholder: "expected outcome" %>
                   </h3> 
-                  <br/> 
+                  <br/> <br/> 
+                  <label class="label-text">Select Personas</label>&nbsp;
                   <% if current_user.personas.any? %>
                     <% current_user.personas.each do |persona| %>
-                      <%= image_tag "clint.png", class: 'img-circle', size: '60' %>
+                      <%= image_tag "clint.png", class: 'img-circle persona_img', size: '60', :data => { toggle: "tooltip", placement: "top", title: "#{persona.persona_name}" } %>
                     <% end %>
                     
                   <% else %>
