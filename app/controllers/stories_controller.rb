@@ -30,6 +30,12 @@ class StoriesController < ApplicationController
 
     respond_to do |format|
       if @story.save
+
+        params[:personas][:id].reject(&:empty?).each do |p|
+          @persona = current_user.personas.find(p)
+          @story.personas << @persona
+        end
+        
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
         format.json { render action: 'show', status: :created, location: @story }
       else
@@ -71,6 +77,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:type, :payload, :feature_id, :draft, :user_id, :situation, :need, :outcome)
+      params.require(:story).permit(:feature_id, :situation, :need, :outcome)
     end
 end
