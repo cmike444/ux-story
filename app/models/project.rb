@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
 
   has_many :features
   has_many :stories, through: :features
-  has_many :personas
+  has_many :personas, through: :stories
   belongs_to :user
 
   after_create :create_first_section

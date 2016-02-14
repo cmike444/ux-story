@@ -36,7 +36,7 @@ class StoriesController < ApplicationController
           @story.personas << @persona
         end
         
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
+        format.html { redirect_to @story.feature.project, notice: 'Story was successfully created.' }
         format.json { render action: 'show', status: :created, location: @story }
       else
         format.html { render action: 'new' }

@@ -34,14 +34,10 @@
                 <label class="label-text">Stories</label>
               </div>
               <div class="col-sm-6">
-                <h3><%= project.personas.size %></h3>
+                <h3><%= project.persona_ids.uniq.size %></h3>
                 <label class="label-text">Personas</label>
               </div>
-              <% if project.personas.any? %>
-                <%= render partial: "projects/index_partials/personas", locals: { project: project } %>
-              <% else %>
-                <%= render partial: "projects/index_partials/empty_personas" %>
-              <% end %>
+              
               
             </div>
           </div>

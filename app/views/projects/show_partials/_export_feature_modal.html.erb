@@ -11,11 +11,32 @@
 
         <div class="modal-body">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <ul class="list-group">
                 <li class="list-group-item">
                   <button class="btn btn-lg btn-block">
                     <i class="fa fa-link"></i>&nbsp; URL<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+                <li class="list-group-item">
+                  <%= link_to feature_path(format: 'xls') do %>
+                    <button class="btn btn-lg btn-block">
+                      <i class="fa fa-file-excel-o"></i>&nbsp; XLS
+                    </button>
+                  <% end %>
+                </li>
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-comments-o"></i>&nbsp; HIPCHAT<span class="label label-primary">Coming Soon</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-file-pdf-o"></i>&nbsp; PDF<span class="label label-primary">Coming Soon</span>
                   </button>
                 </li>
                 <li class="list-group-item">
@@ -26,15 +47,13 @@
                   <% end %>
                 </li>
                 <li class="list-group-item">
-                  <%= link_to feature_path(format: 'xls') do %>
-                    <button class="btn btn-lg btn-block">
-                      <i class="fa fa-file-excel-o"></i>&nbsp; XLS
-                    </button>
-                  <% end %>
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-slack"></i>&nbsp; SLACK<span class="label label-primary">Coming Soon</span>
+                  </button>
                 </li>
               </ul>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <ul class="list-group">
                 <li class="list-group-item">
                   <button class="btn btn-lg btn-block">
@@ -42,16 +61,16 @@
                   </button>
                 </li>
                 <li class="list-group-item">
-                  <button class="btn btn-lg btn-block">
-                    <i class="fa fa-file-pdf-o"></i>&nbsp; PDF<span class="label label-primary">Coming Soon</span>
-                  </button>
-                </li>
-                <li class="list-group-item">
                   <%= link_to feature_path(format: 'json') do %>
                     <button class="btn btn-lg btn-block">
-                      <i class="fa fa-file-code-o"></i>&nbsp; JSON<span class="label label-primary">Coming Soon</span>
+                      <i class="fa fa-file-code-o"></i>&nbsp; JSON
                     </button>
                   <% end %>
+                </li>
+                 <li class="list-group-item">
+                  <button class="btn btn-lg btn-block">
+                    <i class="fa fa-trello"></i>&nbsp; TRELLO<span class="label label-primary">Coming Soon</span>
+                  </button>
                 </li>
               </ul>
             </div>

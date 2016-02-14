@@ -2,7 +2,7 @@
           <div class="modal fade" id="feature_<%= feature.id %>_story" tabindex="-1" role="dialog" aria-labelledby="feature_<%= feature.id %>_story">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
-                <%= form_for feature.stories.build, remote: true do |f| %>
+                <%= form_for feature.stories.build do |f| %>
                 <div class="modal-header">
                   <label class="label-text">Feature</label>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="material-icons">close</i></button>
@@ -16,7 +16,7 @@
                     <b>so I can</b> <%= text_field_tag :outcome, "", id: "new_outcome", class: "form-story new_outcome", placeholder: "expected outcome" %>
                   </h3> 
                   <br/> 
-                  <label class="label-text">Select Personas</label>&nbsp;
+                  <label class="label-text">Which applies to:</label>&nbsp;
                   <br/> 
                   
                   
