@@ -67,6 +67,26 @@
     border: none;
   }
 
+
+.modal-body {
+
+  p {
+    color: #ccc;
+  }
+
+  .list-group {
+
+    .list-group-item {
+
+      i {
+        vertical-align: middle;
+        font-size: 16px;
+        margin-right: 5px;
+        color: $primary_color;
+      }
+    }
+  }
+}
   .modal-footer {
 
     .checkbox {

@@ -13,11 +13,35 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Project Name' %>
+      <h3><%= f.text_field :name, placeholder: 'Name of Project', class: 'form-story width-100' %></h3>
     </div>
 
+    <br>
+    
+
+    
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group users-list">
+          <%= fields_for "users_attributes[]", @project.users.build do |ff| %>
+           <%= render partial: 'projects/new_partials/new_collaborator', locals: { ff: ff } %>
+          <% end %>
+        </div>
+        &nbsp; &nbsp;<%= link_to "+ Add Another", '#add', id: 'add-collaborator', class: 'small' %>
+      </div>
+      <div class="col-sm-6">
+        <h4>Yay! Teamwork.</h4>
+        <p>Invite people from your team or from your client and start working together in seconds. Anyone on your team will see everything posted to this project. You can do this later, too.</p><br/>
+        <%= image_tag "envelop.png", height: '60' %>
+        <br><br>
+        <label class="label-text">Project Invitations</label>
+        <p>Everyone you invite will receive a welcome email.</p>
+      </div>
+    </div>
+    
+    <br/>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit 'Start the Project', class: 'btn btn-primary' %>
     </div>
   <% end %>
 

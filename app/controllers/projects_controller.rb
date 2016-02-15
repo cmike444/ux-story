@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :add_team_member]
   before_action :authenticate_user!
   layout "backend"
 
@@ -26,13 +26,12 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = current_user.projects.all
+    @projects = current_user.projects
     respond_with(@projects)
   end
 
   def show
     @story = Story.new
-    # respond_with(@project)
 
     respond_to do |format|
       format.html
@@ -58,8 +57,13 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
-    @project.save
-    respond_with(@project)
+    puts params.inspect
+    if @project.save
+      @project.users << current_user
+      respond_with(@project)
+    else
+
+    end
   end
 
   def update
@@ -78,6 +82,6 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :user_id)
+      params.require(:project).permit(:name, users_attributes: [ :id, :email ])
     end
 end

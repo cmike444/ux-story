@@ -12,6 +12,7 @@
  *= require expanded-theme
  *= require material_icons
  *= require animate
+ *= require simple-line-icons
  *= require_self
  *= require_tree .
  */

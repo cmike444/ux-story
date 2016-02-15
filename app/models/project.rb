@@ -4,7 +4,9 @@ class Project < ActiveRecord::Base
   has_many :features
   has_many :stories, through: :features
   has_many :personas, through: :stories
-  belongs_to :user
+  has_and_belongs_to_many :users
+
+  accepts_nested_attributes_for :users, allow_destroy: true #, :reject_if => lambda { |a| a[:content].blank? }
 
   after_create :create_first_section
 

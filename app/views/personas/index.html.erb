@@ -7,11 +7,9 @@
       </h1>
     </div>
     <div class="col-sm-6 text-right">
-      <%= link_to new_persona_path do %>
-        <div class="add_new_fab animated zoomIn">
-          <%= material_icon.add.md_24 %>
-        </div>
-      <% end %>
+      <div class="btn-group">
+        <%= link_to "Create a New Persona", new_persona_path, class: "btn btn-primary btn-sm" %>
+      </div>
     </div>
   </div>
 </div>

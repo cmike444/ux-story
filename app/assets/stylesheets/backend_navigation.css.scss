@@ -2,7 +2,7 @@
 
 #app-nav {
   box-shadow: none !important;
-  background: $background_primary_dk !important;
+  background: none !important;
   padding: 0 60px;
   z-index: 1048;
   margin-bottom: 0px;
@@ -64,4 +64,71 @@
   &:active {
     transform: scale(0.95);
   }
+}
+
+
+.secondary-nav {
+    background: none !important;
+    margin-bottom: 0px;
+    height: 100px;
+    padding-right: 100px;
+
+    h1 {
+      font-size: 28px;
+      margin: 15px 70px;
+      color: #656568;
+      font-weight: 300;
+      font-family: "Lato", "Helvetica Neue", Arial;
+      display: inline-block;
+      padding-left: 20px;
+
+      span {
+        color: #999;
+
+      }
+    }
+
+    .btn-group {
+      margin-right: 90px;
+    }
+
+    #add_team_member {
+      display: inline;
+      border: 1px dashed #51596C;
+      padding: 12px 15px;
+      border-radius: 100px;
+      color: #51596C;
+      margin-left: 10px;
+      margin-top: 7px;
+      font-size: 16px;
+    }
+
+    .text-right {
+      padding: 1px;
+
+      img {
+        margin: 7px;
+      }
+    }
+
+    .btn {
+      margin: 12px 0;
+    }
+
+    .back-button {
+      font-size: 28px;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      height: 40px;
+
+      i {
+        color: rgba(94, 122, 155, 0.33);
+        margin: 2px 15px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
 }

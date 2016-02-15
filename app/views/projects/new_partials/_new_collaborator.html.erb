@@ -1,0 +1,8 @@
+<div class="input-group">
+  <i class="input-group-addon icon-user-follow"></i>
+  <%= ff.text_field :email, class: 'form-story width-100', placeholder: 'teammate@email.com', autofocus: 'off' %>
+  <%= ff.hidden_field :_destroy %>
+  <%= link_to '#', class: 'input-group-addon remove_user' do %>
+    <i class="material-icons">close</i>
+  <% end %>
+</div>

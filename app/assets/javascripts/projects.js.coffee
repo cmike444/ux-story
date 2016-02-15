@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# jQuery -> 
+#   $('form').on 'click', '.remove_user', (event) ->
+#     $(this).prev('input[type=hidden]').val('1')
+#     $(this).closest('.input-group').hide().remove()
+#     event.preventDefault()
+
+#   $('form').on 'click', '#add-collaborator', (event) ->
+#     $('.users-list').find('.input-group:first-child').clone().find('input').val('').end().prependTo('.users-list')
+#     event.preventDefault()

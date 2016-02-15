@@ -6,7 +6,7 @@
             <%= material_icon.arrow_back.md_36 %>
           <% end %>
         </span>
-        <h1>New Project</h1>
+        <h1>Start a New Project</h1>
       </div>
       <div class="col-sm-6 text-right">
         
@@ -15,7 +15,24 @@
 </div>
 
 <div class='container-fluid page'>
-  <%= render 'form' %>
-
-  <%= link_to 'Back', projects_path %>
+  <div class="col-sm-2 padding-30-0">
+    <label class="label-text">Getting Started</label><br/>
+    <p><a href="#">Your First Project</a></p>
+    <p><a href="#">Organizing Projects</a></p>
+    <p><a href="#">Team Collaboration</a></p>
+    <p><a href="#">Writing Good Stories</a></p>
+    <p><a href="#">Sharing &amp; Exporting</a></p>
+    <br/>
+    
+  </div>
+  <div class="col-sm-8 padding-30-30 card">
+    <%= render 'form' %>
+  </div>
+  <div class="col-sm-2 text-right padding-30-30">
+    
+    <label class="label-text">Example Projects</label><br/>
+    <p><a href="#">Mission Impossible</a></p>
+    <p><a href="#">Mobile Application</a></p>
+    <p><a href="#">Hardware Object</a></p>
+  </div>
 </div>
