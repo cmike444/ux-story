@@ -265,8 +265,12 @@ h4 {
 
   &.btn-default {
     color: #757B8D;
-    background: none;
+    background: #fbfbfb;
     border-color: #757B8D;
+
+    &:hover {
+      color: $primary_color;
+    }
   }
 
   &.btn-primary {

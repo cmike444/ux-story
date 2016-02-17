@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   has_many :personas, through: :stories
   has_and_belongs_to_many :users
 
-  accepts_nested_attributes_for :users, allow_destroy: true #, :reject_if => lambda { |a| a[:content].blank? }
+  accepts_nested_attributes_for :users, allow_destroy: true, :reject_if => lambda { |a| a[:content].blank? }
 
   after_create :create_first_section
 
